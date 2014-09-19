@@ -11,7 +11,7 @@ namespace SportsStore.WebUI.Concrete
     {
         private EFDbContext context = new EFDbContext();
 
-        IQueryable<Product> IProductRepository.Products
+        IEnumerable<Product> IProductRepository.Products
         {
             get { return context.Products; }
         }

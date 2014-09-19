@@ -9,6 +9,6 @@ namespace SportsStore.Domain.Abstract
 {
     public interface IProductRepository
     {
-        IQueryable<Product> Products { get; }
+        IEnumerable<Product> Products { get; }
     }
 }
