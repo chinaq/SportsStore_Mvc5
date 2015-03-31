@@ -19,6 +19,7 @@ namespace SportsStore.WebUI.Controllers
         }
 
 
+
         // GET: Product
         public ViewResult List(string category, int page = 1)
         {
@@ -34,7 +35,9 @@ namespace SportsStore.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerpage = PageSize,
-                    TotalItems = repository.Products.Count()
+                    TotalItems = category == null ? 
+                        repository.Products.Count():
+                        repository.Products.Where(e => e.Category == category).Count()
                 },
 
                 CurrentCategory = category
